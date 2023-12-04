@@ -1,5 +1,6 @@
 import React from 'react'
-// import img from '../Assets/hero2.png'
+
+
 export default function ColDesign({name,des,price}) {
   return (
     <div className='flex flex-col items-center gap-2 group w-64'>

@@ -1,1 +1,2 @@
-# Pizzon-Feedus-in-ReactJs
+# Chạy Json
+json-server --watch db.json 

@@ -1,4 +1,3 @@
-// Navbar.js
 import React from 'react';
 import { Link } from 'react-router-dom';
 
@@ -11,7 +10,7 @@ export default function Navbar() {
           <div className="w-full px-6 flex justify-between lg:w-max md:px-0 z-30">
             <Link to="/" aria-label="logo" className="flex space-x-2 items-center">
               <img src="/logo.png" className="w-12" alt="tailus logo" width="144" height="133" />
-              <span className="text-2xl font-bold text-yellow-900 dark:text-white">Pizzon <span className="text-yellow-700">Feedus</span></span>
+              <span className="text-2xl font-bold text-yellow-900 dark:text-white">Pizzon <span className="text-yellow-700">ReactJs</span></span>
             </Link>
 
             <div className="flex items-center lg:hidden max-h-10">
@@ -48,16 +47,15 @@ export default function Navbar() {
                 </li>
               </ul>
             </div>
-
             <div className="w-full min-w-max space-y-2 border-yellow-200 lg:space-y-0 sm:w-max lg:border-l dark:lg:border-gray-700">
-              <button type="button" title="Start buying" className="w-full py-3 px-6 text-center rounded-full transition active:bg-yellow-200 dark:active:bg-gray-700 dark:focus:bg-gray-800 focus:bg-yellow-100 sm:w-max">
-                <span className="block uppercase border rounded-full py-2 px-6 text-yellow-800 dark:text-white font-semibold text-sm">
-                  Sign up
+              <button type="button" title="Start buying" className="w-full py-2 px-6 text-center rounded-full transition bg-yellow-300 hover:bg-yellow-100 active:bg-yellow-400 focus:bg-yellow-300 sm:w-max ml-7 mr-3">
+                <span className="block text-yellow-900 uppercase font-semibold text-sm">
+                  Login
                 </span>
               </button>
               <button type="button" title="Start buying" className="w-full py-2 px-6 text-center rounded-full transition bg-yellow-300 hover:bg-yellow-100 active:bg-yellow-400 focus:bg-yellow-300 sm:w-max">
                 <span className="block text-yellow-900 uppercase font-semibold text-sm">
-                  Login
+                  Sign Up
                 </span>
               </button>
             </div>

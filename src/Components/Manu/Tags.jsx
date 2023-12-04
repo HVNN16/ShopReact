@@ -1,22 +1,26 @@
 import React, { useContext } from "react";
 import { useState } from "react";
 import { States } from "../Context Api/Context";
+
 export default function Tags() {
-  const { handleCatgory } = useContext(States);
+  const { handleCategory } = useContext(States); // Fix the typo here
   const tags = [
     { name: "all" },
     { name: "drinks" },
     { name: "pasta" },
     { name: "burgers" },
     { name: "salads" },
-    { name: "deserts" },
+    { name: "desserts" }, // Fix the typo here
     { name: "pizzas" },
   ];
+
   const handleClick = (tag) => {
     setActive(tag.name);
-    handleCatgory(tag);
+    handleCategory(tag); // Fix the typo here
   };
+
   const [active, setActive] = useState("all");
+
   return (
     <div className="flex items-center justify-center ">
       <div className="flex flex-wrap items-center gap-2 sm:gap-4 lg:gap-4 bg-slate-100/70 rounded-full p-3">

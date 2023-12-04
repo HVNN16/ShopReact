@@ -1,33 +1,27 @@
-import React, { useContext } from 'react'
-import ColDesign from './ColDesign'
-import { motion } from 'framer-motion'
-import { States } from '../Context Api/Context'
 
-export default function Products() {
-  const {featured} = useContext(States)
+import React from 'react';
 
-  const container ={
-    hidden:{opacity:0},
-    show:{opacity:1, transition:{
-      staggerChildren:0.5,
-      staggerDirection:1
-    }}
-  }
-  const items ={
-    hidden:{opacity:0,},
-    show:{opacity:1,transition:{
-      type:'spring',bounce:0.4, duration:2
-    }}
-  }
+const ProductCard = ({ product }) => (
+  <div className="bg-white p-4 rounded-md shadow-md">
+    <img src={product.image} alt={product.name} className="w-full h-40 object-cover mb-4" />
+    <h2 className="text-lg font-semibold mb-2">{product.name}</h2>
+    <p className="text-gray-600 mb-2">{product.des}</p>
+    <p className="text-[#FF6600] font-bold">${product.price.toFixed(2)}</p>
+  </div>
   
+);
+
+const Products = ({ data }) => {
+  if (!data) {
+    return null; 
+  }
   return (
-    <motion.div  variants={container} viewport={{once:true}} initial='hidden'
-    whileInView="show" className='flex gap-12 sm:gap-0 lg:gap-0 items-center justify-between py-10 flex-wrap sm:flex-nowrap'>
-        {featured.map((item,i)=>{
-        return(
-          <ColDesign key={i} variants={items} name={item.name} price={item.price} des={item.des}/>
-        )
-    })}
-    </motion.div>
-  )
-}
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      {data.map((product, index) => (
+        <ProductCard key={index} product={product} />
+      ))}
+    </div>
+  );
+};
+
+export default Products; 
